@@ -20,8 +20,15 @@ class MyApp extends StatelessWidget {
         "app": (BuildContext context) => new App(),
         "/friends": (_) => new WebviewScaffold(
               url: "https://flutter.io/",
-            )
+              appBar: new AppBar(
+                title: new Text("Flutter官网"),
+              ),
+              withZoom: true,
+              withLocalStorage: true,
+            ),
+        "search": (BuildContext context) => new Search(),
       },
+      home: new LoadingPage(),
     );
   }
 }
